@@ -2,7 +2,7 @@ const Mock = require("mockjs");
 
 const Random = Mock.Random
 
-module.export = [
+module.exports = [
   {
     url: "/api/test",
     method: "get",
