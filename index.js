@@ -5,10 +5,10 @@ const mockList = require("./mock/index");
 const app = new Koa();
 const router = new Router();
 
-async function getRes(fn) {
+async function getRes(fn, ctx) {
   return new Promise((resolve) => {
     setTimeout(() => {
-      const res = fn();
+      const res = fn(ctx);
       resolve(res);
     }, 1000);
   });
@@ -18,8 +18,8 @@ async function getRes(fn) {
 mockList.forEach((item) => {
   const { url, method, response } = item;
   router[method](url, async (ctx) => {
-    const res = await getRes(response); // 模拟加载状态 1 秒钟
-    ctx.body = res; 
+    const res = await getRes(response, ctx); // 模拟加载状态 1 秒钟
+    ctx.body = res;
   });
 });
 

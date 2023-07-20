@@ -1,4 +1,5 @@
 const Mock = require("mockjs");
+const getQuestionList = require("./data/getQuestionList");
 
 const Random = Mock.Random;
 
@@ -26,6 +27,24 @@ module.exports = [
         errno: 0,
         data: {
           id: Random.id(),
+        },
+      };
+    },
+  },
+  {
+    // 创建问卷
+    url: "/api/question",
+    method: "get",
+    response(ctx) {
+      const { url = "" } = ctx;
+      const isDeleted = url.indexOf("isDeleted=true") >= 0;
+      const isStar = url.indexOf("isStar=true") >= 0;
+
+      return {
+        errno: 0,
+        data: {
+          list: getQuestionList({ isDeleted, isStar }), // 当前页
+          total: 100, // 总数，分页
         },
       };
     },
