@@ -47,7 +47,7 @@ yarn dev
 
 - method `get`
 - path `/api/question`
-- response `{ errno: 0, data: [...] }`
+- response `{ errno: 0, data: { list: [...] } }`
 
 ### 更新问卷信息
 
@@ -73,6 +73,6 @@ PS: 删除是`假删除`，实际是更新 `isDelete` 属性
 ## 小结
 
 - 使用 Restful API
-    - Restful API 是现在设计 API 比较通用的一种方式
+  - Restful API 是现在设计 API 比较通用的一种方式
 - 用户验证使用 JWT
 - 同意返回格式 `{ errno, data, msg }`

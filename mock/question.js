@@ -1,29 +1,31 @@
 const Mock = require("mockjs");
 
-const Random = Mock.Random
+const Random = Mock.Random;
 
 module.exports = [
   {
-    url: "/api/question/:id", // 获取单个问卷
+    // 获取单个问卷信息
+    url: "/api/question/:id",
     method: "get",
     response() {
       return {
         errno: 0,
         data: {
           id: Random.id(),
-          title: Random.ctitle()
+          title: Random.ctitle(),
         },
       };
     },
   },
   {
-    url: "/api/question", // 获取单个问卷
+    // 创建问卷
+    url: "/api/question",
     method: "post",
     response() {
       return {
         errno: 0,
         data: {
-          id: Random.id()
+          id: Random.id(),
         },
       };
     },
