@@ -53,6 +53,7 @@ yarn dev
 
 - method `patch`
 - path `/api/question/:id`
+- request body `{ title, isStar ... }`
 - response `{ errno: 0 }`
 
 PS: 删除是`假删除`，实际是更新 `isDelete` 属性
