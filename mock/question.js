@@ -17,20 +17,20 @@ module.exports = [
           componentList: [
             // Title
             {
-              id: Random.id(),
+              fe_id: Random.id(),
               type: "questionTitle", // 组件类型不能重复，前后端统一好
               title: "标题",
               props: { text: "个人信息调研", level: 1, isCenter: false },
             },
             // Input
             {
-              id: Random.id(),
+              fe_id: Random.id(),
               type: "questionInput",
               title: "输入框1",
               props: { title: "你的姓名", placeholder: "请输入姓名" },
             },
             {
-              id: Random.id(),
+              fe_id: Random.id(),
               type: "questionInput",
               title: "输入框2",
               props: { title: "你的电话", placeholder: "请输入电话" },
