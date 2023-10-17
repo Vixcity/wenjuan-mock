@@ -39,7 +39,7 @@ module.exports = [
               title: "输入框1",
               isHidden: false,
               isLocked: false,
-              props: { title: "你的姓名", placeholder: "请输入姓名" },
+              props: { title: "你的姓名", placeholder: "请输入姓名..." },
             },
             {
               fe_id: Random.id(),
@@ -47,7 +47,16 @@ module.exports = [
               title: "输入框2",
               isHidden: false,
               isLocked: false,
-              props: { title: "你的电话", placeholder: "请输入电话" },
+              props: { title: "你的电话", placeholder: "请输入电话..." },
+            },
+            // Textarea
+            {
+              fe_id: Random.id(),
+              type: "questionTextarea",
+              title: "多行输入",
+              isHidden: false,
+              isLocked: false,
+              props: { title: "你的爱好", placeholder: "请输入..." },
             },
             // Paragraph
             {
@@ -57,6 +66,24 @@ module.exports = [
               isHidden: false,
               isLocked: false,
               props: { text: "一行段落", isCenter: false },
+            },
+            // Radio
+            {
+              fe_id: Random.id(),
+              type: "questionRadio",
+              title: "单选",
+              isHidden: false,
+              isLocked: false,
+              props: {
+                title: "单选标题",
+                isVertical: false,
+                options: [
+                  { text: "选项1", value: "item1" },
+                  { text: "选项2", value: "item2" },
+                  { text: "选项3", value: "item3" },
+                ],
+                value: "",
+              },
             },
           ],
         },
